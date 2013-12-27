@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>848</width>
+    <height>607</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>FontConverter</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="resource.qrc">
+    <normaloff>:/resource/image/icon_48.png</normaloff>:/resource/image/icon_48.png</iconset>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>848</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionSadas"/>
+    <addaction name="actionSadasd"/>
+    <addaction name="separator"/>
+    <addaction name="actionSadasd_2"/>
+    <addaction name="actionAsdasd"/>
+    <addaction name="actionAsdsad"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menu_3">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionSadhjkhs"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_3"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="separator"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionSadhjkhs">
+   <property name="text">
+    <string>关于</string>
+   </property>
+  </action>
+  <action name="actionSadas">
+   <property name="text">
+    <string>导入字符</string>
+   </property>
+  </action>
+  <action name="actionSadasd">
+   <property name="text">
+    <string>导出字符</string>
+   </property>
+  </action>
+  <action name="actionSadasd_2">
+   <property name="text">
+    <string>保存字模</string>
+   </property>
+  </action>
+  <action name="actionAsdasd">
+   <property name="text">
+    <string>asdasd</string>
+   </property>
+  </action>
+  <action name="actionAsdsad">
+   <property name="text">
+    <string>asdsad</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
