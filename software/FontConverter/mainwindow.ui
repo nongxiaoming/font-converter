@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>848</width>
-    <height>607</height>
+    <width>859</width>
+    <height>543</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,13 +17,88 @@
    <iconset resource="resource.qrc">
     <normaloff>:/resource/image/icon_48.png</normaloff>:/resource/image/icon_48.png</iconset>
   </property>
-  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>291</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="locale">
+     <locale language="English" country="UnitedStates"/>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab_Font">
+     <attribute name="title">
+      <string>Font</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout_2"/>
+    </widget>
+    <widget class="QWidget" name="tab_Charaters">
+     <attribute name="title">
+      <string>Characters</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <widget class="CharactersFrame" name="frameCharacters" native="true"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="tab_Output">
+     <attribute name="title">
+      <string>Output</string>
+     </attribute>
+     <layout class="QVBoxLayout" name="verticalLayout_7"/>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="groupBox">
+    <property name="geometry">
+     <rect>
+      <x>290</x>
+      <y>0</y>
+      <width>561</width>
+      <height>461</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Font image preview</string>
+    </property>
+    <widget class="QScrollArea" name="scrollArea">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>541</width>
+       <height>431</height>
+      </rect>
+     </property>
+     <property name="widgetResizable">
+      <bool>true</bool>
+     </property>
+     <widget class="QWidget" name="scrollAreaWidgetContents">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>539</width>
+        <height>429</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>848</width>
+     <width>859</width>
      <height>23</height>
     </rect>
    </property>
@@ -60,7 +135,6 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="separator"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
   <action name="actionSadhjkhs">
@@ -95,6 +169,14 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>CharactersFrame</class>
+   <extends>QWidget</extends>
+   <header>charactersframe.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="resource.qrc"/>
  </resources>

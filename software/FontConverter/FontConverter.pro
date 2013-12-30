@@ -13,13 +13,21 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp\
+       charsselectwidget.cpp \
+       charmapdialog.cpp \
+      charactersframe.cpp\
+      fontconfig.cpp
 
 HEADERS  += include/mainwindow.h\
+       include/charsselectwidget.h \
+       include/charmapdialog.h \
+      include/charactersframe.h\
+      include/fontconfig.h
 
-
-FORMS    += mainwindow.ui
-
+FORMS    += mainwindow.ui\
+         charmapdialog.ui\
+         charactersframe.ui
 INCLUDEPATH+=include
 
 RESOURCES +=\
