@@ -28,6 +28,7 @@ HEADERS  += include/mainwindow.h\
 FORMS    += mainwindow.ui\
          charmapdialog.ui\
          charactersframe.ui
+
 INCLUDEPATH+=include
 
 RESOURCES +=\
