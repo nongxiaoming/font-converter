@@ -17,17 +17,20 @@ SOURCES += main.cpp\
        charsselectwidget.cpp \
        charmapdialog.cpp \
       charactersframe.cpp\
-      fontconfig.cpp
+      fontconfig.cpp \
+    fontconfigframe.cpp
 
 HEADERS  += include/mainwindow.h\
        include/charsselectwidget.h \
        include/charmapdialog.h \
       include/charactersframe.h\
-      include/fontconfig.h
+      include/fontconfig.h \
+    fontconfigframe.h
 
 FORMS    += mainwindow.ui\
          charmapdialog.ui\
-         charactersframe.ui
+         charactersframe.ui \
+    fontconfigframe.ui
 
 INCLUDEPATH+=include
 
