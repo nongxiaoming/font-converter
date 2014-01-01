@@ -28,7 +28,7 @@
      </rect>
     </property>
     <property name="locale">
-     <locale language="English" country="UnitedStates"/>
+     <locale language="Chinese" country="China"/>
     </property>
     <property name="currentIndex">
      <number>0</number>
@@ -37,7 +37,11 @@
      <attribute name="title">
       <string>Font</string>
      </attribute>
-     <layout class="QVBoxLayout" name="verticalLayout_2"/>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="FontConfigFrame" name="widget" native="true"/>
+      </item>
+     </layout>
     </widget>
     <widget class="QWidget" name="tab_Charaters">
      <attribute name="title">
@@ -174,6 +178,12 @@
    <class>CharactersFrame</class>
    <extends>QWidget</extends>
    <header>charactersframe.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FontConfigFrame</class>
+   <extends>QWidget</extends>
+   <header>fontconfigframe.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>
