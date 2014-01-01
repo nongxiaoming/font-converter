@@ -158,8 +158,8 @@ CharMapDialog::CharMapDialog(QWidget *parent) :
         {"009D00 CJK Unified Ideographs",           0x9D00,0x9DFF },
         {"009E00 CJK Unified Ideographs",           0x9E00,0x9EFF },
         {"009F00 CJK Unified Ideographs",           0x9F00,0x9FFF },
-        {"00Alphabetic Presentation Forms",       0xFB00,0xFB4F },
-        {"Arabic Presentation Forms-A",         0xFB50,0xFDFF },
+        {"00FB00 Alphabetic Presentation Forms",    0xFB00,0xFB4F },
+        {"00FB50 Arabic Presentation Forms-A",      0xFB50,0xFDFF },
     };
 
     for (size_t i=0;i<sizeof(ranges)/sizeof(ranges[0]);i++) {
