@@ -25,7 +25,7 @@ HEADERS  += include/mainwindow.h\
        include/charmapdialog.h \
       include/charactersframe.h\
       include/fontconfig.h \
-    fontconfigframe.h
+      include/fontconfigframe.h
 
 FORMS    += mainwindow.ui\
          charmapdialog.ui\
