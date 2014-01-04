@@ -19,10 +19,9 @@ void MainWindow::MainWindow_init()
 {
     font_config = new FontConfig(this);
     bool font_config_block = font_config->blockSignals(true);
-    connect(font_config,SIGNAL(nameChanged()),this,SLOT(onFontNameChanged()));
-    connect(font_config,SIGNAL(sizeChanged()),this,SLOT(onFontNameChanged()));
      font_config->normalize();
      ui->frameCharacters->setConfig(font_config);
+     ui->fontConfigFrame->setFontConfig(font_config);
     this->mainToolBar_init();
 }
 void MainWindow::mainToolBar_init()

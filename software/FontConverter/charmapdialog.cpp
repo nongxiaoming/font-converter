@@ -194,18 +194,18 @@ void CharMapDialog::changeEvent(QEvent *e)
     }
 }
 
-void CharMapDialog::setChars(const QString& string) {
+void CharMapDialog::setText(const QString& string) {
     m_codes.clear();
     const ushort* codes = string.utf16();
     while (*codes) {
         m_codes.insert(*codes);
-        onCharsChanged(*codes,true);
+        onTextChanged(*codes,true);
         codes++;
     }
 
 }
 
-QString CharMapDialog::getCharacters() const {
+QString CharMapDialog::getText() const {
     QString str;
     foreach( uint code , m_codes) {
         str.append(QString().fromUcs4(&code,1));
@@ -213,7 +213,7 @@ QString CharMapDialog::getCharacters() const {
     return str;
 }
 
-void CharMapDialog::onCharsChanged(uint code,bool add) {
+void CharMapDialog::onTextChanged(uint code,bool add) {
     for (int row=0 ; row<ui->listWidget->count();row++) {
         QListWidgetItem* item = ui->listWidget->item(row);
         uint begin = item->data(Qt::UserRole+1).toInt();

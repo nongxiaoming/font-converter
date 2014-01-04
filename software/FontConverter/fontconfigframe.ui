@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -44,7 +44,7 @@
         <string>Font...</string>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -100,7 +100,7 @@
         <bool>true</bool>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>105</x>
@@ -111,7 +111,7 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_2">
         <item>
-         <widget class="QSpinBox" name="spinBox">
+         <widget class="QSpinBox" name="font_width_spinBox">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -121,7 +121,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QSpinBox" name="spinBox_2">
+         <widget class="QSpinBox" name="font_height_spinBox">
           <property name="enabled">
            <bool>false</bool>
           </property>
@@ -132,7 +132,7 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>50</x>
@@ -165,7 +165,7 @@
       <property name="title">
        <string>Offset Config</string>
       </property>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>30</x>

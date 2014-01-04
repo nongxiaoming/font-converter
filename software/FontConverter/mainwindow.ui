@@ -39,7 +39,7 @@
      </attribute>
      <layout class="QVBoxLayout" name="verticalLayout_2">
       <item>
-       <widget class="FontConfigFrame" name="widget" native="true"/>
+       <widget class="FontConfigFrame" name="fontConfigFrame" native="true"/>
       </item>
      </layout>
     </widget>

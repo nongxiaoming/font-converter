@@ -18,19 +18,22 @@ SOURCES += main.cpp\
        charmapdialog.cpp \
       charactersframe.cpp\
       fontconfig.cpp \
-    fontconfigframe.cpp
+    fontconfigframe.cpp \
+    fontpreview.cpp
 
 HEADERS  += include/mainwindow.h\
        include/charsselectwidget.h \
        include/charmapdialog.h \
       include/charactersframe.h\
       include/fontconfig.h \
-      include/fontconfigframe.h
+      include/fontconfigframe.h \
+      include/fontpreview.h
 
 FORMS    += mainwindow.ui\
          charmapdialog.ui\
          charactersframe.ui \
-    fontconfigframe.ui
+    fontconfigframe.ui \
+    fontpreview.ui
 
 INCLUDEPATH+=include
 

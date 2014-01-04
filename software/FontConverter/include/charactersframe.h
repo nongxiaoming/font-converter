@@ -21,7 +21,7 @@ protected:
     QString getCharacters() const;
 private:
     Ui::CharactersFrame *ui;
-    FontConfig* m_config;
+    FontConfig* font_config;
     QString removeDuplicates(const QString& text) const;
     QString sortChars(const QString& text) const;
 signals:

@@ -9,7 +9,7 @@ CharactersFrame::CharactersFrame(QWidget *parent) :
     ui(new Ui::CharactersFrame)
 {
     ui->setupUi(this);
-    m_config = 0;
+    font_config = 0;
 }
 
 CharactersFrame::~CharactersFrame()
@@ -67,14 +67,14 @@ QString CharactersFrame::getCharacters() const {
 
 void CharactersFrame::on_plainTextEdit_textChanged()
 {
-    if (m_config) {
-        m_config->setCharacters(sortChars(removeDuplicates(getCharacters())));
+    if (font_config) {
+        font_config->setText(sortChars(removeDuplicates(getCharacters())));
     }
 }
 
 void CharactersFrame::setConfig(FontConfig* config) {
-    m_config = config;
-    ui->plainTextEdit->setPlainText(config->characters());
+    font_config = config;
+    ui->plainTextEdit->setPlainText(config->text());
 }
 
 QString CharactersFrame::removeDuplicates(const QString& text) const {
@@ -95,21 +95,21 @@ QString CharactersFrame::sortChars(const QString& text) const {
 
 void CharactersFrame::on_pushButtonDefault_clicked()
 {
-    ui->plainTextEdit->setPlainText(m_config->defaultCharacters());
+    ui->plainTextEdit->setPlainText(font_config->defaultCharacters());
 }
 
 void CharactersFrame::on_pushButton_SelectFromCharsMap_clicked()
 {
     CharMapDialog dialog(this);
     dialog.setModal(true);
-    dialog.setChars(m_config->characters());
+    dialog.setText(font_config->text());
 
     int result = dialog.exec();
     (void)result;
     if (dialog.result()==QDialog::Accepted) {
-        m_config->setCharacters(sortChars(removeDuplicates(dialog.getCharacters())));
+        font_config->setText(sortChars(removeDuplicates(dialog.getText())));
         bool block = ui->plainTextEdit->blockSignals(true);
-        ui->plainTextEdit->setPlainText(m_config->characters());
+        ui->plainTextEdit->setPlainText(font_config->text());
         ui->plainTextEdit->blockSignals(block);
     }
 }
@@ -117,6 +117,6 @@ void CharactersFrame::on_pushButton_SelectFromCharsMap_clicked()
 void CharactersFrame::on_pushButtonRefresh_clicked()
 {
     bool block = ui->plainTextEdit->blockSignals(true);
-    ui->plainTextEdit->setPlainText(m_config->characters());
+    ui->plainTextEdit->setPlainText(font_config->text());
     ui->plainTextEdit->blockSignals(block);
 }

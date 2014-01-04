@@ -17,8 +17,8 @@ public:
     CharMapDialog(QWidget *parent = 0);
     ~CharMapDialog();
 
-    void setChars(const QString& string);
-    QString getCharacters() const;
+    void setText(const QString& string);
+    QString getText() const;
 protected:
     void changeEvent(QEvent *e);
 
@@ -31,7 +31,7 @@ private:
 private slots:
     void on_listWidget_itemChanged(QListWidgetItem* item);
     void on_listWidget_currentItemChanged(QListWidgetItem* current, QListWidgetItem* previous);
-    void onCharsChanged(uint code,bool add);
+    void onTextChanged(uint code,bool add);
 };
 
 #endif // CHARMAPDIALOG_H
