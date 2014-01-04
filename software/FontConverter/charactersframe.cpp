@@ -114,9 +114,3 @@ void CharactersFrame::on_pushButton_SelectFromCharsMap_clicked()
     }
 }
 
-void CharactersFrame::on_pushButtonRefresh_clicked()
-{
-    bool block = ui->plainTextEdit->blockSignals(true);
-    ui->plainTextEdit->setPlainText(font_config->text());
-    ui->plainTextEdit->blockSignals(block);
-}

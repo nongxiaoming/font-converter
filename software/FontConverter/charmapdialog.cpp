@@ -174,7 +174,7 @@ CharMapDialog::CharMapDialog(QWidget *parent) :
         item->setData(Qt::UserRole+2,end);
     }
 
-    connect(ui->widget,SIGNAL(codesChanged(uint,bool)),this,SLOT(onCharsChanged(uint,bool)));
+    connect(ui->widget,SIGNAL(codesChanged(uint,bool)),this,SLOT(onTextChanged(uint,bool)));
 }
 
 CharMapDialog::~CharMapDialog()

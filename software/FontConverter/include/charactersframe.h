@@ -27,7 +27,6 @@ private:
 signals:
 
 private slots:
-    void on_pushButtonRefresh_clicked();
     void on_pushButton_SelectFromCharsMap_clicked();
     void on_pushButtonDefault_clicked();
     void on_plainTextEdit_textChanged();
