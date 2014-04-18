@@ -19,24 +19,33 @@ SOURCES += main.cpp\
       charactersframe.cpp\
       fontconfig.cpp \
     fontconfigframe.cpp \
-    fontpreview.cpp
+    fontpreview.cpp \
+    fontcreator.cpp \
+    fontoutputframe.cpp \
+    fontpage.cpp\
+    colorbutton.cpp
 
 HEADERS  += include/mainwindow.h\
        include/charsselectwidget.h \
        include/charmapdialog.h \
-      include/charactersframe.h\
-      include/fontconfig.h \
-      include/fontconfigframe.h \
-      include/fontpreview.h
+       include/charactersframe.h\
+       include/fontconfig.h \
+       include/fontconfigframe.h \
+       include/fontpreview.h \
+       include/fontcreator.h \
+    include/fontoutputframe.h \
+    include/fontpage.h\
+    include/colorbutton.h
 
 FORMS    += mainwindow.ui\
          charmapdialog.ui\
          charactersframe.ui \
     fontconfigframe.ui \
-    fontpreview.ui
+    fontpreview.ui \
+    fontoutputframe.ui
 
 INCLUDEPATH+=include
-
+TRANSLATIONS = FontConverter_zh_CN.ts
 RESOURCES +=\
   resource.qrc
-
+RC_FILE = appicon.rc
