@@ -1,5 +1,13 @@
 <RCC>
     <qresource prefix="/">
         <file>resource/image/icon_48.png</file>
+        <file>resource/image/charmap_48.png</file>
+        <file>resource/image/convert_48.png</file>
+        <file>resource/image/default_48.png</file>
+        <file>resource/image/export_48.png</file>
+        <file>resource/image/font_48.png</file>
+        <file>resource/image/icon_96.ico</file>
+        <file>resource/image/import_48.png</file>
+        <file>resource/image/save_48.png</file>
     </qresource>
 </RCC>
