@@ -13,10 +13,12 @@ FontConfig::FontConfig(QObject *parent) :
     font_italic = false;
     font_width = 16;
     font_height = 16;
-    font_line_spacing = 0;
     current_font.setFamily(tr("宋体"));
     current_font.setPointSize(12);
-    font_char_spacing = 0;
+    this->save_file=tr("d:/myfont.c");
+    this->Reverse=false;
+    this->LSB=false;
+
 }
 
 
@@ -31,12 +33,6 @@ const QString& FontConfig::defaultCharacters() const {
 void FontConfig::setFont(QFont font)
 {
     this->current_font=font;
-//    int dpi_x= QPaintDevice::logicalDpiX();
-//    int dpi_y= QPaintDevice::logicalDpiY();
-//    int width=  font.pointSize()*dpi_x/72;
-//    int height=  font.pointSize()*dpi_y/72;
-//    this->setHeight(height);
-//    this->setWidth(width);
 }
 void FontConfig::setStyle(const QString& style) {
     if (font_style!=style) {
@@ -60,7 +56,10 @@ void FontConfig::setText(const QString& text) {
     }
 }
 
-
+void FontConfig::setSaveFontName(const QString &txt)
+{
+    this->save_file=txt;
+}
 void FontConfig::setHinting(int h) {
     if (m_hinting!=h) {
         m_hinting = h;
@@ -110,23 +109,20 @@ void FontConfig::setHeight(int h) {
     }
 }
 
-void FontConfig::emmitChange() {
-    nameChanged();
+void FontConfig::setReverse(bool b)
+{
+    this->Reverse=b;
     sizeChanged();
 }
 
-void FontConfig::setLineSpacing(int s) {
-    if (font_line_spacing!=s) {
-        font_line_spacing = s;
-        spacingChanged();
-    }
+void FontConfig::setLSB(bool b)
+{
+    this->LSB=b;
 }
 
-void FontConfig::setCharSpacing(int s) {
-    if (font_char_spacing!=s) {
-        font_char_spacing = s;
-        spacingChanged();
-    }
+void FontConfig::emmitChange() {
+    nameChanged();
+    sizeChanged();
 }
 
 
