@@ -1,5 +1,6 @@
 #include "charmapdialog.h"
 #include "ui_charmapdialog.h"
+#include <QMenu>
 
 CharMapDialog::CharMapDialog(QWidget *parent) :
     QDialog(parent),
@@ -173,10 +174,72 @@ CharMapDialog::CharMapDialog(QWidget *parent) :
         item->setData(Qt::UserRole+1,begin);
         item->setData(Qt::UserRole+2,end);
     }
-
+    ui->listWidget->setContextMenuPolicy(Qt::CustomContextMenu);
+    popMenu = new QMenu(ui->listWidget);
+    //右键显示的菜单
+    QAction *select_action = new QAction(tr("Select marked subset") , ui->listWidget);
+    QObject::connect(select_action,SIGNAL(triggered()),this,SLOT(selectmarked_click()));
+    QAction *unselect_action = new QAction(tr("Unselect marked subset") , ui->listWidget);
+    QObject::connect(unselect_action,SIGNAL(triggered()),this,SLOT(unselectmarked_click()));
+    QAction *select_all_action = new QAction(tr("Select all subset") , ui->listWidget);
+    QObject::connect(select_all_action,SIGNAL(triggered()),this,SLOT(selectall_click()));
+    QAction *unselect_all_action = new QAction(tr("Unselect all subset") , ui->listWidget);
+    QObject::connect(unselect_all_action,SIGNAL(triggered()),this,SLOT(unselectall_click()));
+    //将菜单标签加载上去显示
+    popMenu->addAction(select_action);
+    popMenu->addAction(unselect_action);
+    popMenu->addAction(select_all_action);
+    popMenu->addAction(unselect_all_action);
     connect(ui->widget,SIGNAL(codesChanged(uint,bool)),this,SLOT(onTextChanged(uint,bool)));
 }
-
+void CharMapDialog::selectmarked_click()
+{
+    foreach(QListWidgetItem* item,ui->listWidget->selectedItems())
+    {
+       if(item!=NULL)
+       {
+           item->setCheckState(Qt::Checked);
+       }
+    }
+}
+void CharMapDialog::unselectmarked_click()
+{
+    foreach(QListWidgetItem* item,ui->listWidget->selectedItems())
+    {
+       if(item!=NULL)
+       {
+           item->setCheckState(Qt::Unchecked);
+       }
+    }
+}
+void CharMapDialog::selectall_click()
+{
+    QListWidgetItem* item=NULL;
+    for(int row=0;row<ui->listWidget->count();row++)
+    {
+        item=ui->listWidget->item(row);
+       if(item!=NULL)
+       {
+           item->setCheckState(Qt::Checked);
+       }
+    }
+}
+void CharMapDialog::unselectall_click()
+{
+    QListWidgetItem* item=NULL;
+    for(int row=0;row<ui->listWidget->count();row++)
+    {
+        item=ui->listWidget->item(row);
+       if(item!=NULL)
+       {
+           item->setCheckState(Qt::Unchecked);
+       }
+    }
+}
+void CharMapDialog::on_listWidget_customContextMenuRequested(QPoint)
+{
+    popMenu->exec(QCursor::pos()); //菜单出现的位置为当前鼠标的位置
+}
 CharMapDialog::~CharMapDialog()
 {
     delete ui;
@@ -221,7 +284,22 @@ void CharMapDialog::onTextChanged(uint code,bool add) {
         if (code>=begin && code<=end) {
             bool block = ui->listWidget->blockSignals(true);
             if (add) {
+                bool all_check=true;
+                for(uint i=begin;i<=end;i++)
+                {
+                    if(false==m_codes.contains(i))
+                    {
+                        all_check=false;
+                        break;
+                    }
+                }
+                if(all_check)
+                {
                 item->setCheckState(Qt::Checked);
+                }else
+                {
+                   item->setCheckState(Qt::PartiallyChecked);
+                }
             } else {
                 bool have = false;
                 foreach (uint c, m_codes ) {
@@ -230,7 +308,7 @@ void CharMapDialog::onTextChanged(uint code,bool add) {
                         break;
                     }
                 }
-                item->setCheckState(have ? Qt::Checked : Qt::Unchecked );
+                item->setCheckState(have ? Qt::PartiallyChecked : Qt::Unchecked );
             }
             ui->listWidget->blockSignals(block);
         }
@@ -251,6 +329,7 @@ void CharMapDialog::on_listWidget_itemChanged(QListWidgetItem* item)
     uint begin = item->data(Qt::UserRole+1).toInt();
     uint end = item->data(Qt::UserRole+2).toInt();
     if (checked) {
+        //将当前区域所有字符选择
         for (uint i=begin;i<=end;i++) {
             m_codes.insert(i);
         }
@@ -261,5 +340,6 @@ void CharMapDialog::on_listWidget_itemChanged(QListWidgetItem* item)
                 m_codes.erase(it);
         }
     }
+    //刷新字符显示框
     ui->widget->update();
 }

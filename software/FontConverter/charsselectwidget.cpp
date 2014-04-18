@@ -5,7 +5,7 @@
 #include <QPainter>
 #include <QToolTip>
 
-static const int cell_size = 24;
+static  int cell_size = 24;
 static const int columns = 16;
 
 CharsSelectWidget::CharsSelectWidget(QWidget *parent) :
@@ -18,23 +18,30 @@ CharsSelectWidget::CharsSelectWidget(QWidget *parent) :
 }
 
 
-QSize CharsSelectWidget::sizeHint() const {
-    return QSize(columns*cell_size, ((m_codes_end-m_codes_begin)/columns+1)*cell_size);
-}
+//QSize CharsSelectWidget::sizeHint() const {
+   // cell_size=rect().width()/16;
+   // return QSize(columns*cell_size, ((m_codes_end-m_codes_begin)/columns+1)*cell_size);
+//}
 
 
 void CharsSelectWidget::setRange(uint begin,uint end) {
     m_codes_begin = begin;
     m_codes_end = end;
-    setMinimumSize(sizeHint());
-    setMaximumSize(sizeHint());
-    adjustSize();
+   // setMinimumSize(sizeHint());
+   // setMaximumSize(sizeHint());
+   // adjustSize();
     update();
 }
 
 void CharsSelectWidget::paintEvent(QPaintEvent *event) {
+    //绘制控件本身
     QPainter painter(this);
+    cell_size=rect().width()/columns;
+    int h=((m_codes_end-m_codes_begin)/columns+1)*cell_size;
+    this->setFixedHeight(h);
+    //填充白色背景
     painter.fillRect(event->rect(),QBrush(Qt::white));
+    //检查字符表字符个数不为0
     Q_ASSERT(m_codes!=0);
     QRect redrawRect = event->rect();
     int beginRow = redrawRect.top()/cell_size;
