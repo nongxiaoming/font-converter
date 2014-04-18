@@ -3,6 +3,7 @@
 #include <QFileDialog>
 #include "fontconfig.h"
 #include "charmapdialog.h"
+#include <QTextCodec>
 
 CharactersFrame::CharactersFrame(QWidget *parent) :
     QFrame(parent),
@@ -10,13 +11,22 @@ CharactersFrame::CharactersFrame(QWidget *parent) :
 {
     ui->setupUi(this);
     font_config = 0;
+
 }
 
 CharactersFrame::~CharactersFrame()
 {
     delete ui;
 }
-
+void CharactersFrame::on_plainTextEdit_selectionChanged()
+{
+   QString txt= ui->plainTextEdit->textCursor().selectedText();
+   if(txt.isNull()||txt.isEmpty())
+   {
+       return;
+   }
+   SelectText_changed(txt);
+}
 void CharactersFrame::changeEvent(QEvent *e)
 {
     QFrame::changeEvent(e);
