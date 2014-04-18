@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>859</width>
-    <height>543</height>
+    <width>850</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,121 +18,401 @@
     <normaloff>:/resource/image/icon_48.png</normaloff>:/resource/image/icon_48.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTabWidget" name="tabWidget">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>291</width>
-      <height>461</height>
-     </rect>
-    </property>
-    <property name="locale">
-     <locale language="Chinese" country="China"/>
-    </property>
-    <property name="currentIndex">
-     <number>0</number>
-    </property>
-    <widget class="QWidget" name="tab_Font">
-     <attribute name="title">
-      <string>Font</string>
-     </attribute>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="FontConfigFrame" name="fontConfigFrame" native="true"/>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="tab_Charaters">
-     <attribute name="title">
-      <string>Characters</string>
-     </attribute>
-     <layout class="QVBoxLayout" name="verticalLayout_4">
-      <item>
-       <widget class="CharactersFrame" name="frameCharacters" native="true"/>
-      </item>
-     </layout>
-    </widget>
-    <widget class="QWidget" name="tab_Output">
-     <attribute name="title">
-      <string>Output</string>
-     </attribute>
-     <layout class="QVBoxLayout" name="verticalLayout_7"/>
-    </widget>
-   </widget>
-   <widget class="QGroupBox" name="groupBox">
-    <property name="geometry">
-     <rect>
-      <x>290</x>
-      <y>0</y>
-      <width>561</width>
-      <height>461</height>
-     </rect>
-    </property>
-    <property name="title">
-     <string>Font image preview</string>
-    </property>
-    <widget class="QScrollArea" name="scrollArea">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>20</y>
-       <width>541</width>
-       <height>431</height>
-      </rect>
-     </property>
-     <property name="widgetResizable">
-      <bool>true</bool>
-     </property>
-     <widget class="QWidget" name="scrollAreaWidgetContents">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>539</width>
-        <height>429</height>
-       </rect>
+   <layout class="QGridLayout" name="gridLayout" columnstretch="0,0,0,0,0,0,0,0,0,0,0,0,0,0,0">
+    <item row="1" column="11">
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Font image preview</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="0" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>BG Color</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ColorButton" name="bgcolor_Btn" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>24</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_4">
+           <property name="text">
+            <string>Fill Color</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ColorButton" name="fillcolor_Btn" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>24</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="text">
+            <string>Grid Color</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="ColorButton" name="gridcolor_Btn" native="true">
+           <property name="minimumSize">
+            <size>
+             <width>24</width>
+             <height>0</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>Grid Size</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSlider" name="gridsize_Slider">
+           <property name="maximumSize">
+            <size>
+             <width>140</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="minimum">
+            <number>4</number>
+           </property>
+           <property name="maximum">
+            <number>14</number>
+           </property>
+           <property name="pageStep">
+            <number>2</number>
+           </property>
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="showgrid_checkBox">
+           <property name="text">
+            <string>Show Grid</string>
+           </property>
+           <property name="checked">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>40</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>485</width>
+            <height>419</height>
+           </rect>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <property name="leftMargin">
+            <number>0</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="rightMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="FontPreview" name="fontPreviewFrame" native="true"/>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QToolButton" name="save_chars_toolBtn">
+      <property name="toolTip">
+       <string>Export characters to file</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/resource/image/export_48.png</normaloff>:/resource/image/export_48.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
       </property>
      </widget>
-    </widget>
-   </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="locale">
+       <locale language="Chinese" country="China"/>
+      </property>
+      <property name="currentIndex">
+       <number>2</number>
+      </property>
+      <widget class="QWidget" name="tab_Font">
+       <attribute name="title">
+        <string>Font</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_2">
+        <item>
+         <widget class="FontConfigFrame" name="fontConfigFrame" native="true"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_Charaters">
+       <attribute name="title">
+        <string>Characters</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_4">
+        <item>
+         <widget class="CharactersFrame" name="charactersFrame" native="true"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_Output">
+       <attribute name="title">
+        <string>Output</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayout_7">
+        <item>
+         <widget class="FontOutputFrame" name="fontOutputFrame" native="true"/>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QToolButton" name="load_defaultchars_toolBtn">
+      <property name="toolTip">
+       <string>Load the default characters</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/resource/image/default_48.png</normaloff>:/resource/image/default_48.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="11">
+     <widget class="QToolButton" name="font_setting_toolBtn">
+      <property name="toolTip">
+       <string>Setting the font to convert</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/resource/image/font_48.png</normaloff>:/resource/image/font_48.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="13">
+     <widget class="QToolButton" name="save_to_toolBtn">
+      <property name="toolTip">
+       <string>Setting where to save the bitmap font</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/resource/image/save_48.png</normaloff>:/resource/image/save_48.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QToolButton" name="open_chars_toolBtn">
+      <property name="toolTip">
+       <string>Import characters form file</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/resource/image/import_48.png</normaloff>:/resource/image/import_48.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>32</width>
+        <height>32</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="7">
+     <widget class="QToolButton" name="open_charsmap_toolBtn">
+      <property name="toolTip">
+       <string>Select characters from charactersmap dialog</string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/resource/image/charmap_48.png</normaloff>:/resource/image/charmap_48.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="14">
+     <widget class="QToolButton" name="convert_toolBtn">
+      <property name="toolTip">
+       <string>Start bitmap font convert task </string>
+      </property>
+      <property name="text">
+       <string>...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/resource/image/convert_48.png</normaloff>:/resource/image/convert_48.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>24</width>
+        <height>24</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>859</width>
+     <width>850</width>
      <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
-    <property name="title">
-     <string>文件</string>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
     </property>
-    <addaction name="actionSadas"/>
-    <addaction name="actionSadasd"/>
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="action_import_text"/>
+    <addaction name="action_export_text"/>
     <addaction name="separator"/>
-    <addaction name="actionSadasd_2"/>
-    <addaction name="actionAsdasd"/>
-    <addaction name="actionAsdsad"/>
+    <addaction name="action_save_font"/>
+    <addaction name="separator"/>
+    <addaction name="action_exit"/>
    </widget>
    <widget class="QMenu" name="menu_2">
     <property name="title">
-     <string>编辑</string>
+     <string>&amp;Edit</string>
     </property>
+    <addaction name="action_text_default"/>
+    <addaction name="actionSelect_From_Charsmap"/>
    </widget>
    <widget class="QMenu" name="menu_3">
     <property name="title">
-     <string>帮助</string>
+     <string>Help</string>
     </property>
-    <addaction name="actionSadhjkhs"/>
+    <addaction name="action_about"/>
+   </widget>
+   <widget class="QMenu" name="menuSetting">
+    <property name="title">
+     <string>Setting</string>
+    </property>
+    <widget class="QMenu" name="menuLanguage">
+     <property name="title">
+      <string>Language</string>
+     </property>
+     <addaction name="actionChinese"/>
+     <addaction name="actionEnglish"/>
+    </widget>
+    <addaction name="actionFont"/>
+    <addaction name="menuLanguage"/>
    </widget>
    <addaction name="menu"/>
    <addaction name="menu_2"/>
+   <addaction name="menuSetting"/>
    <addaction name="menu_3"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
+   <property name="iconSize">
+    <size>
+     <width>24</width>
+     <height>24</height>
+    </size>
+   </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
    </attribute>
@@ -141,34 +421,70 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionSadhjkhs">
+  <action name="action_about">
    <property name="text">
-    <string>关于</string>
+    <string>About</string>
    </property>
   </action>
-  <action name="actionSadas">
+  <action name="action_import_text">
    <property name="text">
-    <string>导入字符</string>
+    <string>Import Text</string>
    </property>
   </action>
-  <action name="actionSadasd">
+  <action name="action_export_text">
    <property name="text">
-    <string>导出字符</string>
+    <string>Export Text</string>
    </property>
   </action>
-  <action name="actionSadasd_2">
+  <action name="action_save_font">
    <property name="text">
-    <string>保存字模</string>
+    <string>Save Font...</string>
    </property>
   </action>
-  <action name="actionAsdasd">
+  <action name="action_save_as">
    <property name="text">
-    <string>asdasd</string>
+    <string>Save As...</string>
    </property>
   </action>
   <action name="actionAsdsad">
    <property name="text">
     <string>asdsad</string>
+   </property>
+  </action>
+  <action name="action_exit">
+   <property name="text">
+    <string>Exit</string>
+   </property>
+  </action>
+  <action name="action_text_default">
+   <property name="text">
+    <string>Load Text Default</string>
+   </property>
+  </action>
+  <action name="actionFont">
+   <property name="text">
+    <string>Font...</string>
+   </property>
+  </action>
+  <action name="actionChinese">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Chinese</string>
+   </property>
+  </action>
+  <action name="actionEnglish">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionSelect_From_Charsmap">
+   <property name="text">
+    <string>Select From Charsmap</string>
    </property>
   </action>
  </widget>
@@ -186,9 +502,44 @@
    <header>fontconfigframe.h</header>
    <container>1</container>
   </customwidget>
+  <customwidget>
+   <class>FontPreview</class>
+   <extends>QWidget</extends>
+   <header>fontpreview.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>FontOutputFrame</class>
+   <extends>QWidget</extends>
+   <header>fontoutputframe.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ColorButton</class>
+   <extends>QWidget</extends>
+   <header location="global">colorbutton.h</header>
+   <container>1</container>
+  </customwidget>
  </customwidgets>
  <resources>
   <include location="resource.qrc"/>
  </resources>
- <connections/>
+ <connections>
+  <connection>
+   <sender>action_exit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>424</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
