@@ -25,8 +25,9 @@ private:
     QString removeDuplicates(const QString& text) const;
     QString sortChars(const QString& text) const;
 signals:
-
-private slots:
+   void SelectText_changed(const QString& text);
+public slots:
+    void on_plainTextEdit_selectionChanged();
     void on_pushButton_SelectFromCharsMap_clicked();
     void on_pushButtonDefault_clicked();
     void on_plainTextEdit_textChanged();

@@ -70,30 +70,32 @@ public:
     void setHeight(int h);
     Q_PROPERTY( int height READ height WRITE setHeight )
 
-    int lineSpacing() const { return font_line_spacing;}
-    void setLineSpacing(int s);
-    Q_PROPERTY( int lineSpacing READ lineSpacing WRITE setLineSpacing )
+    bool isReverse() const { return Reverse;}
+    void setReverse(bool b);
 
-    int charSpacing() const { return font_char_spacing;}
-    void setCharSpacing(int s);
-    Q_PROPERTY( int charSpacing READ charSpacing WRITE setCharSpacing )
+    bool isLSB() const { return LSB;}
+    void setLSB(bool b);
+
+    const QString& saveFontName() const { return save_file; }
+    void setSaveFontName(const QString& txt);
 
 
     void emmitChange();
 private:
-    QFont  current_font;
-    QString font_style;
-    int font_size;
-    QString input_text;
+    QString save_file;
+    QFont  current_font;  //字体
+    QString font_style;   //字体风格
+    int font_size;        //字体大小
+    QString input_text;   //输入的取模字符
     int    m_hinting;
     bool    m_render_missing;
     bool    m_antialiased;
-    int    font_bold;
-    int    font_italic;
-    int   font_width;
-    int   font_height;
-    int font_char_spacing;
-    int font_line_spacing;
+    int    font_bold;    //是否加粗
+    int    font_italic;  //是否倾斜
+    int   font_width;    //字体宽度
+    int   font_height;  //字体高度
+    bool  Reverse;    //是否反白显示
+    bool  LSB;        //指定数据储存方式是否为LSB，或MSB
 signals:
     void nameChanged();
     void sizeChanged();

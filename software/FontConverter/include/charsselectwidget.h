@@ -17,7 +17,7 @@ protected:
     virtual void mousePressEvent(QMouseEvent *);
     virtual void mouseReleaseEvent(QMouseEvent *);
     virtual void mouseMoveEvent(QMouseEvent *);
-    virtual QSize sizeHint() const ;
+   // virtual QSize sizeHint() const ;
 signals:
     void codesChanged(uint code,bool add);
 public slots:

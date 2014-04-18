@@ -18,6 +18,10 @@ public:
     void setFontConfig(FontConfig *config);
 public slots:
     void fontSetting();
+    void Positive_click();
+    void font_width_change(int value);
+    void font_height_change(int value);
+    void font_size_change(int value);
 private:
     FontConfig *font_config;
     Ui::FontConfigFrame *ui;

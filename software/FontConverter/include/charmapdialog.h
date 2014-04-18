@@ -23,15 +23,19 @@ protected:
     void changeEvent(QEvent *e);
 
 
-
 private:
     Ui::CharMapDialog *ui;
     QSet<uint>  m_codes;
-
+    QMenu *popMenu;
 private slots:
     void on_listWidget_itemChanged(QListWidgetItem* item);
     void on_listWidget_currentItemChanged(QListWidgetItem* current, QListWidgetItem* previous);
     void onTextChanged(uint code,bool add);
+    void on_listWidget_customContextMenuRequested(QPoint pos);
+    void selectmarked_click();
+    void unselectmarked_click();
+    void selectall_click();
+    void unselectall_click();
 };
 
 #endif // CHARMAPDIALOG_H
