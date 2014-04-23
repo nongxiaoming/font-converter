@@ -92,7 +92,3 @@ void MainWindow::readConfig(QSettings& settings,
       }
     settings.endGroup();
 }
-void MainWindow::Langli_change()
-{
-
-}
